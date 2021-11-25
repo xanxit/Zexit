@@ -73,7 +73,7 @@ const Home = ({ user,boards, boardOrder, dispatch }) => {
     
     let boardList = []
     const getBoards = async()=>{
-        axios.get(`/api/getBoardList/${user.userId}`)
+        axios.get(`https://zeexit.herokuapp.com/api/getBoardList/${user.userId}`)
         .then(async(res)=>{
           const updatedBoards = res.data.boards
           if(updatedBoards){
@@ -127,7 +127,7 @@ const Home = ({ user,boards, boardOrder, dispatch }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post('/api/newBoard', {
+    axios.post('https://zeexit.herokuapp.com/api/newBoard', {
       title : newBoardTitle,
       userId: user['userId']
     })

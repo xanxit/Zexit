@@ -30,7 +30,7 @@ function SignUp({ login, dispatch }) {
       alert("Please enter all fieds");
       return
     }
-    axios.post('/api/newUser', {email:email, username:user, password:password,fName,lName})
+    axios.post('https://zeexit.herokuapp.com/api/newUser', {email:email, username:user, password:password,fName,lName})
       .then((response) => {
         if(response.data.msg){
           const status = response.data.status

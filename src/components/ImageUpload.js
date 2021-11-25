@@ -22,7 +22,7 @@ function ImageUpload({token, dispatch}) {
         var flag=true
         axios({
             method:"POST",
-            url:"http://localhost:8000/api/upload",
+            url:"https://zeexit.herokuapp.com/api/upload",
             data:DATA,
             headers:HEADERS
         }).then(res=>{console.log(res.data);})

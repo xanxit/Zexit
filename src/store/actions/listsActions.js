@@ -17,7 +17,7 @@ export const addList = list => {
 
 export const updateListById = (chg, params) =>(dispatch)=>{
   const {id, soIndex, desIndex} = chg
-  axios.patch(`/api/updateList/${id}`, params)
+  axios.patch(`https://zeexit.herokuapp.com/api/updateList/${id}`, params)
   .then((res)=>{
     if(!res.data.msg){
       dispatch({type:CONSTANTS.UPDATE_LIST, payload:{list:res.data, soIndex, desIndex}})
@@ -58,7 +58,7 @@ export const sort = (
 export const editTitle = (listId, newTitle, index)=>(dispatch) => {
   console.log(listId)
   console.log(newTitle)
-  axios.patch(`/api/updateList/${listId}`, {'title': newTitle})
+  axios.patch(`https://zeexit.herokuapp.com/api/updateList/${listId}`, {'title': newTitle})
   .then((res)=>{
     if (!res.data.msg){
       dispatch({
@@ -78,7 +78,7 @@ export const editTitle = (listId, newTitle, index)=>(dispatch) => {
 
 export const deleteList = (listId, index) => (dispatch)=>{
 
-  axios.delete(`/api/delList/${listId}`)
+  axios.delete(`https://zeexit.herokuapp.com/api/delList/${listId}`)
   .then((res)=>{
     console.log(res.data)
     if(res.data.msg){

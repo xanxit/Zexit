@@ -33,7 +33,7 @@ function SignUpWBoard({login, dispatch}) {
 
     
 
-    axios.post(`/api/newUser/${boardId}`, {email:email, username:user, password:password})
+    axios.post(`https://zeexit.herokuapp.com/api/newUser/${boardId}`, {email:email, username:user, password:password})
       .then((response) => {
         if(response.data.msg){
           const status = response.data.status

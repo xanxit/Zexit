@@ -42,7 +42,7 @@ class TrelloCreate extends React.PureComponent {
       this.setState({
         text: ""
       });
-      axios.post(`/api/newList`, {
+      axios.post(`https://zeexit.herokuapp.com/api/newList`, {
         boardId:boardId,
         title:text,
         order:order
@@ -65,7 +65,7 @@ class TrelloCreate extends React.PureComponent {
       this.setState({
         text: ""
       });
-      axios.post(`/api/newCard`, {
+      axios.post(`https://zeexit.herokuapp.com/api/newCard`, {
         boardId: boardId,
         listId: listId,
         title: text,

@@ -62,7 +62,7 @@ const TrelloBoard = ({login, board,lists, cards, dispatch}) => {
       // console.log(currBoard.boardId)
       console.log("Getting all list")
       setLoading(true)
-      axios.get(`/api/getList/${currBoard.boardId}`)
+      axios.get(`https://zeexit.herokuapp.com/api/getList/${currBoard.boardId}`)
       .then((res)=>{
         // console.log(res.data)
         //TODO: Order the list found hear
@@ -81,7 +81,7 @@ const TrelloBoard = ({login, board,lists, cards, dispatch}) => {
     const getAllCards = (lists)=>{
       //get all cards from boardId
       console.log("Getting all Cards")
-      axios.get(`/api/getCard/${currBoard.boardId}`)
+      axios.get(`https://zeexit.herokuapp.com/api/getCard/${currBoard.boardId}`)
       .then((res)=>{
         // console.log(res.data)
         const cardList = {}

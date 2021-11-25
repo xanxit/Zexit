@@ -37,7 +37,7 @@ function Login({login, dispatch}) {
      alert("email is required")
     }
 
-    Axios.post("/api/login", {
+    Axios.post("https://zeexit.herokuapp.com/api/login", {
       email: email,
       password: password,
     })

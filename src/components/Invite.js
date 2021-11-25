@@ -16,7 +16,7 @@ export default function Invite({boardId}) {
         e.preventDefault()
         if(email.includes("@")){
             // call api to send mail 
-            axios.put("/api/acessRights", {email, boardId})
+            axios.put("https://zeexit.herokuapp.com/api/acessRights", {email, boardId})
             .then((res)=>{
                 alert(res.data.msg)
                 setEmail("")

@@ -18,7 +18,7 @@ export const addCard = (listId, card) => {
 
 export const updateCardById = (destination, currCard, cardId, params)=>(dispatch)=>{
   console.log(destination.droppableId)
-    axios.patch(`/api/updateCard/${cardId}`, {...params, 'listId': destination.droppableId})
+    axios.patch(`https://zeexit.herokuapp.com/api/updateCard/${cardId}`, {...params, 'listId': destination.droppableId})
     .then((res)=>{
       dispatch({
         type:CONSTANTS.UPDATE_CARD,
@@ -36,7 +36,7 @@ export const updateCardById = (destination, currCard, cardId, params)=>(dispatch
 
 
 export const editCard = (id, listId, index, newText) => (dispatch)=>{
-  axios.patch(`/api/updateCard/${id}`, {'title': newText})
+  axios.patch(`https://zeexit.herokuapp.com/api/updateCard/${id}`, {'title': newText})
   .then((res)=>{
     dispatch({
       type: CONSTANTS.EDIT_CARD,
@@ -49,7 +49,7 @@ export const editCard = (id, listId, index, newText) => (dispatch)=>{
 };
 
 export const deleteCard = (id, listId, index) =>(dispatch)=> {
-  axios.delete(`/api/delCard/${id}`)
+  axios.delete(`https://zeexit.herokuapp.com/api/delCard/${id}`)
   .then((res)=>{
     dispatch({
       type: CONSTANTS.DELETE_CARD,

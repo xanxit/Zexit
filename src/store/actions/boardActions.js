@@ -19,7 +19,7 @@ export const addBoard = ({boardId, title, isOwener}) => {
 }
 
 export const deleteBoard = (boardId, index)=>(dispatch) => {
-  axios.delete(`/api/${boardId}`)
+  axios.delete(`https://zeexit.herokuapp.com/api/${boardId}`)
   .then((res)=>{
     dispatch({
       type: CONSTANTS.DELETE_BOARD,
