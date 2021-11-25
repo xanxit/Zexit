@@ -13,7 +13,7 @@ export function Reset(){
         e.preventDefault();
     };
 
-    axios.post('reset',{
+    axios.post('https://zeexit.herokuapp.com/reset',{
         password: lpassword,
         password_config: lpassword_config
     }).then(

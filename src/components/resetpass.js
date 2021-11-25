@@ -14,7 +14,7 @@ export function ResetPass() {
         e.preventDefault();
     };
 
-    axios.post('resetpass',{
+    axios.post('https://zeexit.herokuapp.com/resetpass',{
         email: lemail
     }).then(
         res => {

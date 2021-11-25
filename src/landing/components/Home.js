@@ -84,7 +84,7 @@ const Home = ({ user,boards, boardOrder, dispatch }) => {
             await Promise.all(
               //Get board by Id
               updatedBoards.map(async(id)=>{
-                const boardInfo = await axios.get(`/api/getBoard/${id}`)
+                const boardInfo = await axios.get(`https://zeexit.herokuapp.com/api/getBoard/${id}`)
                 if(boardInfo.data){
                   const {boardId, title, owenerId, createdAt, msg} = boardInfo.data
                   // console.log(boardInfo.data)
